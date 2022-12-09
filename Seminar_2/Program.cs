@@ -87,3 +87,98 @@ Cratnost(user_nam, divider1, divider2);*/
 Console.WriteLine($"Новое число {DeleteDec()}"); */
 
 
+//  Homework
+//  Задача 10: Напишите программу,которая принимает на вход трехзначное число и на выходе показыает вторую цифру этого числа.(без преобразования типов)
+// 456 -> 5   782 -> 8   918 -> 1
+
+/*void GettingDec (int num)
+{  
+    if(num > 99 && num < 1000)
+    {
+        int num1 = num % 100;
+        int num2 = num1 / 10;
+        Console.WriteLine($"Новое число {num2}");
+    }
+    else Console.WriteLine($"Число {num} не трехзначное");
+}
+Console.WriteLine("Ведите трехзначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+GettingDec(number); */
+
+//Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.(без преобразования типов)
+// 645 -> 5   78 -> третьей цифры нет   32679 -> 6
+
+int ThirdDigit (int[] collection, int A)
+{
+    int num = collection.Length;
+    int index = 3;
+    int new_num = A;
+    
+    while (index < num)
+    {
+        if(collection[index] == A)
+        {
+            new_num = index;
+            break;
+        }
+    }
+    return new_num;
+}
+
+void NoThird (int num)
+{
+    if(num < 100)
+    {
+        Console.WriteLine("Нет третьей цифры");
+    }
+    else
+    {
+        if(num > 99 && num < 1000)
+        {
+            int new_num = num % 10;
+            Console.WriteLine($"Третья цифра в числе {new_num}");
+        }
+        else
+        {
+            if(num > 1000)
+            {
+                int new_number = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"Третья цифра в данном числе {ThirdDigit}");
+            }
+        }
+    }
+}
+
+Console.WriteLine("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+NoThird(number);
+
+//Задача 15:Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+//6->да  7->да  1->нет
+
+/*void DayWeek(int num)
+{
+    if(num > 0 && num < 8)
+    {
+        if(num >= 6)
+        {
+            Console.WriteLine("Это выходной день");
+        }
+        else
+        {
+            Console.WriteLine("Это будний день");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Это не день недели");
+    }
+}
+
+
+Console.WriteLine("Введите число, соответствующее дню недели");
+int number = Convert.ToInt32(Console.ReadLine());
+
+DayWeek(number);
